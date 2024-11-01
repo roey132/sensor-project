@@ -5,7 +5,7 @@ import sys
 import time
 import math
 import struct
-import smbus
+import smbus2
 # import ctypes
 
 # voc = ctypes.cdll.LoadLibrary('./voclib.so')
@@ -46,7 +46,7 @@ ADDR = 0x59
 
 class SGP40:
     def __init__(self, address=ADDR):
-        self.i2c = smbus.SMBus(1)
+        self.i2c = smbus2.SMBus(1)
         self.address = address
         
         # feature set 0x3240/0x3220

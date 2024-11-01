@@ -1,6 +1,6 @@
 import time
 import math
-import smbus
+import smbus2
 
 ADDR  = (0X53)
 
@@ -41,7 +41,7 @@ GAIN_18 = (0x4)
 
 class LTR390:
 	def __init__(self, address=ADDR):
-		self.i2c = smbus.SMBus(1)
+		self.i2c = smbus2.SMBus(1)
 		self.address = address
 		self.ID = self.Read_Byte(LTR390_PART_ID)
 		# print("ID = %#x" %self.ID)

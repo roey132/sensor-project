@@ -4,7 +4,7 @@
 import sys
 import time
 import math
-import smbus
+import smbus2
 # import RPi.GPIO as GPIO
 
 Gyro  = [0,0,0]
@@ -56,7 +56,7 @@ MPU9255_ID     = 0x73 # identity of mpu9255 is 0x73
 
 class MPU925x:
     def __init__(self, address=ADDR):
-        self.bus = smbus.SMBus(1)
+        self.bus = smbus2.SMBus(1)
         self.address = address
 
         self.ID = self.Read_Byte(MPU9255_REG_ID)

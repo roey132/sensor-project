@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 import time
-import smbus
+import smbus2
 import math
 Gyro  = [0,0,0]
 Accel = [0,0,0]
@@ -121,7 +121,7 @@ MAG_DATA_LEN                         =6
 class ICM20948(object):
   def __init__(self,address=I2C_ADD_ICM20948):
     self._address = address
-    self._bus = smbus.SMBus(1)
+    self._bus = smbus2.SMBus(1)
     bRet=self.icm20948Check()             #Initialization of the device multiple times after power on will result in a return error
     time.sleep(0.5)                       #We can skip this detection by delaying it by 500 milliseconds
     # user bank 0 register 
